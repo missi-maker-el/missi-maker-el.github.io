@@ -25,6 +25,22 @@
     color: white;
     cursor: pointer;
   }
+  .hidden {
+  display: none;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 15px;
+}
+
   button:hover {
     background: #ff3366;
   }
@@ -36,6 +52,9 @@
   }
 </style>
 </head>
+
+
+
 
 <body>
 
@@ -59,6 +78,18 @@
 <div class="section">
   <button onclick="showReasons()">Click for a surprise 💌</button>
 </div>
+<div class="section">
+  <h2>Our memories 📸</h2>
+
+  <button onclick="toggleGallery()">Open our memories 💕</button>
+
+  <div id="gallery" class="gallery hidden">
+    <img src="3cac9ccd-bd88-4934-b1eb-6813e96163f0.jpeg" alt="Us 💖">
+    <img src="e452dd26-2534-4693-874c-2cfddec21f07.jpeg" alt="Favorite moment ♥️">
+    <img src="IMG_6068.jpeg" alt="Always you 😚">
+  </div>
+</div>
+
 
 <div class="section">
   <button onclick="finalSurprise()">Final surprise 😏</button>
@@ -67,6 +98,11 @@
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <script>
+  <script>
+  function toggleGallery() {
+    document.getElementById("gallery").classList.remove("hidden");
+  }
+
   function celebrate() {
     confetti({
       particleCount: 150,
